@@ -1,3 +1,14 @@
 {
-    "python.pythonPath": "C:\\Users\\satee\\Anaconda3\\python.exe"
+    "python.pythonPath": "C:\\Users\\satee\\Anaconda3\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./Algebra",
+        "-p",
+        "test*.py"
+    ],
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "python.unitTest.unittestEnabled": true
 }
