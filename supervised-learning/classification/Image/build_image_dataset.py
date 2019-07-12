@@ -18,7 +18,10 @@ def create_dataset():
     labels = tf.constant([0,1])
     dataset = tf.data.Dataset.from_tensor_slices((filenames,labels))
     dataset = dataset.shuffle(len(filenames))
-    dataset = dataset.map(parse_function,train_preprocess)
+    dataset = dataset.map(parse_function,num_parallel_calls=4)
+    dataset = dataset.map(train_preprocess, num_parallel_calls=4)
+    dataset = dataset.batch(batch_size)
+    dataset = dataset.prefetch(1)
     return dataset
 
 def parse_function(filename, label):
